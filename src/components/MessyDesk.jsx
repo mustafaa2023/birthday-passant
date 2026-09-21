@@ -92,13 +92,18 @@ export default function MessyDesk() {
             viewport={{ once: true, margin: '80px' }}
             transition={{ type: 'spring', stiffness: 130, damping: 16 }}
           >
-            <img
-              src={photo.url}
-              alt=""
-              style={{ width: '100%', aspectRatio: '4/5', objectFit: 'cover', display: 'block' }}
-              draggable="false"
-            />
-            {photo.caption && <p className="caption" style={{ fontSize: '0.98rem' }}>{photo.caption}</p>}
+            <div className="polaroid-img-wrap">
+              <img
+                src={photo.url}
+                alt=""
+                draggable="false"
+              />
+            </div>
+            {photo.caption && (
+              <div className="polaroid-caption-wrap">
+                <p className="caption">{photo.caption}</p>
+              </div>
+            )}
           </motion.div>
         ))}
       </motion.div>

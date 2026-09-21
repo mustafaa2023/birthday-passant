@@ -102,14 +102,17 @@ export default function FinalMessage() {
                 animate={{ opacity: 1, rotate: -1.5 }}
                 transition={{ duration: 1.1, delay: 0.3 }}
               >
-                <img
-                  src={finalPhoto.url}
-                  alt="Our favorite"
-                  style={{ width: '100%', aspectRatio: '6/5', objectFit: 'cover', display: 'block' }}
-                />
-                <p className="caption" style={{ fontFamily: 'var(--font-hand)', fontSize: '1.05rem' }}>
-                  {finalPhoto.caption}
-                </p>
+                <div className="polaroid-img-wrap" style={{ aspectRatio: '6/5' }}>
+                  <img
+                    src={finalPhoto.url}
+                    alt="Our favorite"
+                  />
+                </div>
+                <div className="polaroid-caption-wrap">
+                  <p className="caption">
+                    {finalPhoto.caption}
+                  </p>
+                </div>
               </motion.div>
 
               {/* Birthday heading */}
