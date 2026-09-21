@@ -1,0 +1,66 @@
+.parallax-gallery-section {
+  background-color: var(--bg-color);
+  padding: 8rem 0 16rem 0; /* Huge padding to allow parallax scroll room */
+  overflow: hidden;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 6rem;
+  position: relative;
+  z-index: 10;
+}
+
+.gallery-header h2 {
+  font-size: 3rem;
+}
+
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mt-20 {
+  margin-top: 150px;
+}
+
+.mt-10 {
+  margin-top: 80px;
+}
+
+.gallery-item {
+  width: 100%;
+}
+
+.gallery-item .photo-frame {
+  padding: 12px 12px 30px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover .photo-frame {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .gallery-column:nth-child(3) {
+    display: none; /* Hide 3rd col on mobile, push items to first 2 */
+  }
+  .mt-20, .mt-10 {
+    margin-top: 40px;
+  }
+}

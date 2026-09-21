@@ -1,0 +1,110 @@
+.memories-section {
+  background-color: var(--bg-color-alt); /* Slightly different background to separate sections visually */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; /* Lots of breathing room between memories */
+  position: relative;
+  padding: 4rem 0;
+}
+
+/* Subtle line down the middle (optional, can be removed if it feels too corporate) */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: rgba(61, 59, 56, 0.1);
+  z-index: 0;
+}
+
+.timeline-item {
+  display: flex;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item.align-left {
+  justify-content: flex-start;
+}
+
+.timeline-item.align-right {
+  justify-content: flex-end;
+}
+
+.timeline-item.align-center {
+  justify-content: center;
+}
+
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+}
+
+.timeline-item.align-left .photo-wrapper {
+  margin-right: 50%;
+  padding-right: 3rem;
+}
+
+.timeline-item.align-right .photo-wrapper {
+  margin-left: 50%;
+  padding-left: 3rem;
+}
+
+.timeline-item.align-center .photo-wrapper {
+  margin: 0 auto;
+}
+
+.timeline-year {
+  position: absolute;
+  font-size: 4rem;
+  color: rgba(61, 59, 56, 0.05); /* Very subtle watermarked year */
+  top: -2rem;
+  z-index: -1;
+}
+
+.timeline-item.align-left .timeline-year {
+  right: 0;
+}
+
+.timeline-item.align-right .timeline-year {
+  left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 24px; /* Move line to the left on mobile */
+  }
+  
+  .timeline-item.align-left .photo-wrapper,
+  .timeline-item.align-right .photo-wrapper {
+    margin: 0;
+    padding: 0 0 0 2rem;
+    max-width: 100%;
+  }
+  
+  .timeline-year {
+    font-size: 3rem;
+    top: -1.5rem;
+    left: 1rem !important;
+  }
+}

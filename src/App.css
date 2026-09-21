@@ -1,0 +1,31 @@
+.app-root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.music-btn {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 500;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 600px) {
+  .music-btn {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+}

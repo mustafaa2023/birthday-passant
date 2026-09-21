@@ -1,0 +1,178 @@
+.scene-carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-light);
+  padding: 80px 20px 120px 20px;
+}
+
+.carousel-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.carousel-header h2 {
+  font-size: 2.5rem;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.carousel-viewport {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.carousel-nav {
+  background: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.carousel-nav:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-card {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: grab;
+}
+
+.carousel-card:active {
+  cursor: grabbing;
+}
+
+/* Quote Type Card */
+.carousel-card.type-quote {
+  text-align: center;
+}
+
+.carousel-card.type-quote::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  color: var(--accent-color);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.quote-content p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  position: relative;
+  z-index: 1;
+}
+
+/* Story Type Card */
+.carousel-card.type-story {
+  padding: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.story-image {
+  width: 100%;
+  height: 200px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.story-text {
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.story-date {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.story-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.story-text p {
+  color: var(--text-muted);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+
+.carousel-dot.active {
+  opacity: 1;
+  background: var(--text-main);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .carousel-nav {
+    display: none; /* Hide arrows on mobile, rely on swipe */
+  }
+  .carousel-card {
+    max-width: 90vw;
+  }
+  .quote-content p {
+    font-size: 1.4rem;
+  }
+}

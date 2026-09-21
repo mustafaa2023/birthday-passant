@@ -1,0 +1,113 @@
+.envelopes-section {
+  background-color: var(--accent-light);
+  padding: 10rem 0;
+}
+
+.envelopes-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.envelope-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.envelope-label {
+  margin-bottom: 24px;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  text-align: center;
+  font-style: italic;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  perspective: 1000px;
+}
+
+/* The structural pieces of the envelope */
+.envelope-back,
+.envelope-front,
+.envelope-flap,
+.letter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.envelope-back {
+  background-color: #e5d8cd;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.envelope-front {
+  background-color: #d1bfae;
+  border-radius: 0 0 4px 4px;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 50%, 0 0);
+  z-index: 3;
+}
+
+.envelope-flap {
+  background-color: #dfcebf;
+  border-radius: 4px 4px 0 0;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  z-index: 4;
+  transform-origin: top;
+}
+
+.letter {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  z-index: 2;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.letter p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+/* Open State */
+.envelope-wrapper.is-open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1; /* Move behind letter */
+}
+
+.envelope-wrapper.is-open .letter {
+  transform: translateY(-80px);
+  z-index: 4; /* Move in front of front flap so it can be read clearly */
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .envelope-wrapper {
+    height: 220px;
+  }
+  .letter {
+    padding: 24px;
+  }
+  .letter p {
+    font-size: 1rem;
+  }
+}

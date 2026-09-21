@@ -1,0 +1,29 @@
+.opening-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+.opening-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 0 24px;
+}
+
+.opening-content h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.opening-content p {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}

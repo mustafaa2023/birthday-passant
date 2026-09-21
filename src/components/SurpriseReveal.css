@@ -1,0 +1,55 @@
+.surprise-section {
+  background-color: var(--bg-color-alt);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.surprise-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.surprise-prompt {
+  text-align: center;
+}
+
+.surprise-prompt h3 {
+  font-size: 2rem;
+  color: var(--text-main);
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.surprise-content {
+  max-width: 500px;
+  width: 100%;
+}
+
+.surprise-photo {
+  transform: rotate(-2deg);
+  transition: transform 0.5s ease;
+}
+
+.surprise-photo:hover {
+  transform: rotate(0deg);
+}
+
+.text-lg {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.text-center {
+  text-align: center;
+}
